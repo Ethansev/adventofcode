@@ -40,18 +40,19 @@ func main() {
 	// TODO: does not handle the case where a number does not exist in the string
 	// I GOT A GOLD STAR WOOOOOOOOOOOO
 
-	inputs, err := parseInput()
+	inputs, err := parseInput1()
 	if err != nil {
 		fmt.Println("We goofed up somewhere", err)
 		return
 	}
 
 	answer := calculate(inputs)
+	fmt.Println("Sum for part one", answer)
 
-	fmt.Println(answer)
+	partTwo()
 }
 
-func parseInput() ([]string, error) {
+func parseInput1() ([]string, error) {
 	file, err := os.Open("1_input.txt")
 	if err != nil {
 		fmt.Println("Could not open the file", err)
